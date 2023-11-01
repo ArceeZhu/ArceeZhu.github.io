@@ -1,0 +1,23 @@
+---
+title: "Something About Arcee"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    code_folding: hide
+    theme: cosmo
+---
+# Biography
+A public health student. Used to study medicine. Current interests include cooking, playing basketball, writing diary and reading New York Times. 
+
+# Resume 
+
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
