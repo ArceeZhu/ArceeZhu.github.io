@@ -1,0 +1,66 @@
+---
+title: "Jiangyuan Zhu"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+
+Jiangyuan Zhu
+
+5519665018 | jz3573@cumc.columbia.edu 
+
+100 Haven Ave, New York, New York, United States, 
+
+EDUCATION
+
+Columbia University, Mailman School of Public Health, New York, NY              Expected May 2024
+
+Master of Public Health,  Epidemiology,  Certificate in Population Mental Health                          
+Sun Yat-Sen University, School of Medicine, Guangzhou, China                           June 2022                                                                                                    Bachelor of Medicine                                                                                                                                     
+
+
+WORK & RESEARCH EXPERIENCE 
+
+New York City Department of Health and Mental Hygiene New York, NY            Oct 2023 – Present 
+
+Research Assistant Intern in World Trade Center Health Registry
+
+Utilizing longitudinal data from health survey to study the chronic and emerging 9/11 related mental and physical health conditions among women and children’s survivors.
+
+Columbia University Medical Center, New York, NY                                May 2023-Present                                                      
+Research assistant on Longitudinal Research on Aging Drivers Study Project. 
+
+•	Analyze depression prevalence and protective factors among old adults in the US during the Covid-19 pandemic. 
+
+Affiliated Hospitals of Sun Yat-Sen University   Guangzhou & Shenzhen, China.  Nov 2020- May 2022
+
+Trainee Doctor
+
+•	Assist surgeries and physicians with surgeries and physical examinations. 
+Sun Yat-Sen University, School of Medicine, Guangzhou, China                                                                                                                                    
+Research team leader on Experimental Study on Parasitology and Glioma           Jun 2020-Dec 2020 
+
+•	Used a random control test to see whether Angiostrongylus Cantonensis would affect the blood-brain barrier permeability of mice.
+
+Researcher on Literature review on Circulation Tumor Cell (CTC)                Mar 2019-Jan 2020                                                                                                                                          
+•	Reviewed literature on the circulation of tumor cells. Publish a review focused on the clinical applications and related immune mechanisms of CTC formation.
+
+
+LEADERSHIP EXPERIENCE
+
+Woman Basketball Team                                                     October 2017- Present
+SYSU MED Toastmasters Club                                                May 2019- October 2021
+
+PULICATION & PRESENTATION
+
+•	Poster Presentation on depression prevalence among old adults during the Covid-19 Pandemic GSA annual meeting (Nov 2023- Tampa, Florida) 
+•	Zhong, X., Zhu, J., & Ke, Z. (2020). Circulating tumor cells in cancer patients: Developments and clinical applications for immunotherapy. Molecular cancer, 19(1), 1-12.
+
+SKILLS
+
+MS Office (Word, Excel, PowerPoint); Statistical and research software (SAS, SPSS, R)
+Fluent in Mandarin. Entry level Cantonese 
+
+

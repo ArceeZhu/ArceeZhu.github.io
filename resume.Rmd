@@ -1,0 +1,16 @@
+---
+title: "Resume"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cosmo
+---
+
+
+Appeared in orignial cartoon series.   1985
+
+Became best known as a recurring cast member in The Transformers: The Movie  1986
+
+Became a gunner and marksman in "Five Faces of Darkness." 1990 
+
