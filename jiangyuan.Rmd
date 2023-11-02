@@ -6,9 +6,6 @@ output:
     toc_float: true
 ---
 
-
-Jiangyuan Zhu
-
 5519665018 | jz3573@cumc.columbia.edu 
 
 100 Haven Ave, New York, New York, United States, 

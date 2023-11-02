@@ -9,6 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(p8105.datasets)
 library(plotly)
+library(dplyr)
 
 
 ```
@@ -16,37 +17,49 @@ library(plotly)
 ## when do people always shop? 
 ```{r}
 data("instacart")
-instacart =
+instacart1 =
   instacart %>% 
-  select ( order_id, order_hour_of_day, aisle, department ) %>% 
-  filter(! department=="missing")
+  filter(! department=="missing") %>% 
+  mutate(hour_of_day=order_hour_of_day, category=department) %>% 
+  select ( order_id, hour_of_day, aisle, category) 
  
 ```
 
 ```{r}
-instacart |>
+instacart1 |>
   plot_ly(
-    x = ~order_hour_of_day, 
-  y = ~ department, type = "box", 
-  color = ~ department, 
-  mode = "markers", colors = "viridis")
+  x = ~ hour_of_day, y = ~ category, type = "box", 
+  color = ~ category, mode = "markers", colors = "viridis") %>% 
+  layout(title = "Grocerry Shopping By Category")
 
 ```
 we can see that people usually shopping between 10 to 15 o'clock. 
 
 
-## what kind of things do people shop in the morning? 
+## What are the  patterns of people buying meat and seafood people along the day? 
 ```{r}
-instacart %>% 
-  filter (department %in% c("bakery", "breakfast", "canned food", "diary egg", "deli", "dry good pasta", "frozen", "meat seafood", "pantry","snack")) %>% 
-  filter(! department=="missing") %>% 
-  filter(department=="meat seafood") %>% 
-  select ( order_id, order_hour_of_day, aisle, department )  %>% 
-  group_by(order_hour_of_day) %>% 
-  count (aisle) %>% 
-  plot_ly (x = ~ order_hour_of_day, y= ~ n, type = "scatter", mode="makers", color = ~ aisle )
+  instacart1 %>% 
+  filter(category=="meat seafood") %>% 
+  select ( order_id, hour_of_day, aisle, category)  %>% 
+  group_by(hour_of_day, aisle) %>% 
+  summarise(number=n()) %>% 
+  mutate(text_label=str_c("hour_of_day:", hour_of_day,  "\nnumber:", number)) %>% 
+  plot_ly (x = ~ hour_of_day, y= ~ number, type = "scatter", mode="makers", color = ~ aisle , text= ~ text_label) %>% 
+  layout(title = "Meat and Seafood Shopping By Time")
  
  
   
+```
+
+### What does the percentage of each aisle in snacks look like?
+
+```{r}
+  instacart1 %>% 
+  filter(category == "snacks") %>% 
+  group_by(aisle) %>% 
+  summarise(count = n()) %>% 
+  plot_ly (labels = ~ aisle, values=~ count, type="pie") %>% 
+  layout(title = " Snacks Shopping By Category ")
+
 ```
 

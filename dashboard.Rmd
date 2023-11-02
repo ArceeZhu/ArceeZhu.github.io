@@ -1,0 +1,70 @@
+---
+title: "figures"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+library(dplyr)
+
+
+data("instacart")
+instacart1 =
+  instacart %>% 
+  filter(! department=="missing") %>% 
+  mutate(hour_of_day=order_hour_of_day, category=department) %>% 
+  select ( order_id, hour_of_day, aisle, category) 
+ 
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### when do people always shop? 
+
+```{r}
+instacart1 |>
+  plot_ly(
+    x = ~ hour_of_day, y = ~ category, type = "box", 
+    color = ~ category, mode = "markers", colors = "viridis") %>% 
+  layout(title = "Grocerry Shopping By Category")
+```
+People usually shopping between 10 to 15 o'clock. 
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### What are the  patterns of people buying meat and seafood people nalong the day? 
+
+```{r}
+  instacart1 %>% 
+  filter(category=="meat seafood") %>% 
+  select ( order_id, hour_of_day, aisle, category)  %>% 
+  group_by(hour_of_day, aisle) %>% 
+  summarise(number=n()) %>% 
+  mutate(text_label=str_c("hour_of_day:", hour_of_day,  "\nnumber:", number)) %>% 
+  plot_ly (x = ~ hour_of_day, y= ~ number, type = "scatter", mode="makers", color = ~ aisle , text= ~ text_label) %>% 
+   layout(title = "Meat and Seafood Shopping By Time")
+
+ 
+```
+Hot dogs, abcaon and sausage are the best sellers, followed by fresh meat and packaged meat. 
+
+### What does the percentage of each aisle in snacks look like?
+
+```{r}
+instacart1 %>% 
+  filter(category == "snacks") %>% 
+  group_by(aisle) %>% 
+  summarise(count = n()) %>% 
+  plot_ly (labels = ~ aisle, values=~ count, type="pie") %>% 
+  layout(title = " Snacks Shopping By Category ")
+```
+
