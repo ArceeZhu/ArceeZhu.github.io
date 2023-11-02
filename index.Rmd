@@ -12,6 +12,9 @@ A public health student, whose current interests include sharing foods with frie
 ## Resume 
 * [Jiangyuan Zhu's resume](jiangyuan.html)
 
+## Interesting facts about shopping 
+* [The Instacart Online Grocery Shopping Dataset 2017](figures.html)
+
 
 
 

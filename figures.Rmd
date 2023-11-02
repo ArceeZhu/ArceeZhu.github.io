@@ -1,0 +1,52 @@
+---
+title: "pictures"
+output: html_document
+date: "2023-11-01"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+
+
+```
+
+## when do people always shop? 
+```{r}
+data("instacart")
+instacart =
+  instacart %>% 
+  select ( order_id, order_hour_of_day, aisle, department ) %>% 
+  filter(! department=="missing")
+ 
+```
+
+```{r}
+instacart |>
+  plot_ly(
+    x = ~order_hour_of_day, 
+  y = ~ department, type = "box", 
+  color = ~ department, 
+  mode = "markers", colors = "viridis")
+
+```
+we can see that people usually shopping between 10 to 15 o'clock. 
+
+
+## what kind of things do people shop in the morning? 
+```{r}
+instacart %>% 
+  filter (department %in% c("bakery", "breakfast", "canned food", "diary egg", "deli", "dry good pasta", "frozen", "meat seafood", "pantry","snack")) %>% 
+  filter(! department=="missing") %>% 
+  filter(department=="meat seafood") %>% 
+  select ( order_id, order_hour_of_day, aisle, department )  %>% 
+  group_by(order_hour_of_day) %>% 
+  count (aisle) %>% 
+  plot_ly (x = ~ order_hour_of_day, y= ~ n, type = "scatter", mode="makers", color = ~ aisle )
+ 
+ 
+  
+```
+
